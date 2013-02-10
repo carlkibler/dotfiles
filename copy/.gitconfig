@@ -1,6 +1,6 @@
 [user]
-  name = Ben Alman
-  email = EMAIL
+  name = Carl Scharenberg
+  email = carl.scharenberg@gmail.com
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
