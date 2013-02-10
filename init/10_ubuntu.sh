@@ -41,7 +41,8 @@ packages=(
   git-core
   tree sl id3tool
   nmap telnet
-  htop
+  htop most
+  vim
 )
 
 list=()
