@@ -42,7 +42,8 @@ packages=(
   tree sl id3tool
   nmap telnet
   htop most
-  vim
+  vim 
+  python-pip python-distribute virtualenvwrapper
 )
 
 list=()
