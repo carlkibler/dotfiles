@@ -84,11 +84,7 @@ These things will be installed, but _only_ if they aren't already.
   * virtualenv + pip + distribute
 
 ### Both
-* Nave
-  * Npm (latest stable)
-    * Grunt
-    * JSHint
-    * Uglify-JS
+* Nothing right now
 
 ## The ~/ "copy" step
 Any file in the `copy` subdirectory will be copied into `~/`. Any file that _needs_ to be modified with personal information (like [.gitconfig](https://github.com/carschar/dotfiles/blob/master/copy/.gitconfig) which contains an email address and private key) should be _copied_ into `~/`. Because the file you'll be editing is no longer in `~/.dotfiles`, it's less likely to be accidentally committed into your public dotfiles repo.
