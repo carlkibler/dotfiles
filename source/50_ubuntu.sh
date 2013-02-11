@@ -11,3 +11,5 @@ alias apt-get="sudo apt-get"
 # Make 'less' more.
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+alias refresh="source ~/.bashrc"
+
