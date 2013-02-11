@@ -81,6 +81,23 @@ function prompt_svn() {
   fi
 }
 
+# Get Virtual Env
+function prompt_virtualenv() {
+  prompt_getcolors
+  local venv=" (${VIRTUAL_ENV##*/})"
+
+  if [[ $VIRTUAL_ENV != "" ]]
+	then
+	# Strip out the path and just leave the env name
+	venv=" (${VIRTUAL_ENV##*/}) "
+  else
+	# In case you don't have one activated
+	venv=''
+  fi
+  echo "$venv"
+}
+
+
 # Maintain a per-execution call stack.
 prompt_stack=()
 trap 'prompt_stack=("${prompt_stack[@]}" "$BASH_COMMAND")' DEBUG
@@ -108,6 +125,7 @@ function prompt_command() {
   # misc: [cmd#:hist#]
   # PS1="$PS1$c1[$c0#\#$c1:$c0!\!$c1]$c9"
   # path: [user@host:path]
+  PS1="$PS1$(prompt_virtualenv)"
   PS1="$PS1$c1[$c0\u$c1@$c0\h$c1:$c0\w$c1]$c9"
   PS1="$PS1\n"
   # date: [HH:MM:SS]
