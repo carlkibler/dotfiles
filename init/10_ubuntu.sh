@@ -40,10 +40,15 @@ packages=(
   build-essential libssl-dev
   git-core
   tree sl id3tool
-  nmap telnet
-  htop most
+  nmap telnet mtr ngrep netcat
+  openssh-server lftp rsync 
+  htop most iftop iotop nethogs
   vim 
   python-pip python-distribute virtualenvwrapper
+  curl wget
+  multitail watch ack 
+  lsof 
+  screen tmux autojump
 )
 
 list=()

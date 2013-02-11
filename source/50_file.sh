@@ -27,6 +27,9 @@ alias ltr='ls -lsatrF'
 # Easier navigation: .., ..., -
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .4='cd ../../../..'
+
 alias -- -='cd -'
 
 # File size
