@@ -44,12 +44,15 @@ packages=(
   openssh-server lftp rsync 
   htop most iftop iotop nethogs
   vim 
-  python-pip python-distribute virtualenvwrapper
+  python-pip 
   curl wget
   multitail watch ack 
   lsof 
   screen tmux autojump
 )
+
+sudo pip install -U pip
+sudo pip install -U distribute virtualenvwrapper
 
 list=()
 for package in "${packages[@]}"; do
