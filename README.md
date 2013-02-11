@@ -50,7 +50,7 @@ Notes:
 
 ```sh
 sudo apt-get -qq update && sudo apt-get -qq upgrade && sudo apt-get -qq install curl && echo &&
-bash -c "$(curl -fsSL https://raw.github.com/cowboy/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
+bash -c "$(curl -fsSL https://raw.github.com/carschar/dotfiles/master/bin/dotfiles)" && source ~/.bashrc
 ```
 
 ## The "init" step
@@ -79,6 +79,8 @@ These things will be installed, but _only_ if they aren't already.
   * nmap
   * telnet
   * htop
+  * most
+  * virtualenv + pip + distribute
 
 ### Both
 * Nave
@@ -86,13 +88,6 @@ These things will be installed, but _only_ if they aren't already.
     * Grunt
     * JSHint
     * Uglify-JS
-* Rbenv
-  * Ruby 1.9.3-p194 (default)
-  * Ruby 1.9.2-p290 (default)
-* Ruby Gems
-  * bundler
-  * awesome_print
-  * interactive_editor
 
 ## The ~/ "copy" step
 Any file in the `copy` subdirectory will be copied into `~/`. Any file that _needs_ to be modified with personal information (like [.gitconfig](https://github.com/cowboy/dotfiles/blob/master/copy/.gitconfig) which contains an email address and private key) should be _copied_ into `~/`. Because the file you'll be editing is no longer in `~/.dotfiles`, it's less likely to be accidentally committed into your public dotfiles repo.
