@@ -38,8 +38,10 @@ sudo apt-get -qq upgrade
 # Install APT packages.
 packages=(
   build-essential libssl-dev
-  git-core
-  tree sl id3tool
+  git-core git git-gui git-doc git-cvs git-svn
+  subversion cvs 
+  tree sl id3tool dos2unix
+  libssl-dev 
   nmap telnet mtr ngrep netcat
   openssh-server lftp rsync 
   htop most iftop iotop nethogs
@@ -50,9 +52,6 @@ packages=(
   lsof 
   screen tmux autojump
 )
-
-sudo pip install -U pip
-sudo pip install -U distribute virtualenvwrapper
 
 list=()
 for package in "${packages[@]}"; do
@@ -76,3 +75,8 @@ if [[ ! "$(type -P git-extras)" ]]; then
     sudo make install
   )
 fi
+
+# Setup basic pip Extras
+sudo pip install -U pip
+sudo pip install -U distribute virtualenvwrapper
+
