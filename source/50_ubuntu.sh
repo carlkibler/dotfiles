@@ -12,4 +12,3 @@ alias apt-get="sudo apt-get"
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 alias refresh="source ~/.bashrc"
-alias j='autojump'
