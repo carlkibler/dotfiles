@@ -51,6 +51,7 @@ packages=(
   multitail watch ack 
   lsof 
   screen tmux autojump
+  ttf-inconsolata
 )
 
 list=()
