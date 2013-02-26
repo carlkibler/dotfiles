@@ -5,4 +5,4 @@ export PROJECT_HOME=$HOME/dev
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 source /usr/local/bin/virtualenvwrapper_lazy.sh
 
-
+alias goenv='cd $VIRTUAL_ENV'
