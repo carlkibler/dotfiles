@@ -48,7 +48,7 @@ packages=(
   vim 
   python-pip 
   curl wget
-  multitail watch ack 
+  multitail watch ack-grep glark
   lsof 
   screen tmux autojump
   ttf-inconsolata
