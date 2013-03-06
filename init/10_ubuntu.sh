@@ -32,6 +32,7 @@ fi
 
 # Update APT.
 e_header "Updating APT"
+sudo add-apt-repository ppa:apt-fast/stable
 sudo apt-get -qq update
 sudo apt-get -qq upgrade
 
@@ -47,7 +48,7 @@ packages=(
   htop most iftop iotop nethogs
   vim 
   python-pip 
-  curl wget
+  curl wget apt-fast
   multitail watch ack-grep glark
   lsof 
   screen tmux autojump
