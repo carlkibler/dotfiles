@@ -21,5 +21,5 @@ if [[ -e ~/.ssh/known_hosts ]]; then
 fi
 
 export EDITOR=vim
-export PAGER=most
+export PAGER=less
 
