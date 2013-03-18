@@ -4,10 +4,54 @@
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore
+  filemode = true
+  bare = false
+  logallrefupdates = true
 [apply]
   whitespace = fix
 [alias]
+  # When doing "git git log" or some such, do not complain about "git" not
+  # being a valid Git command. This happens when copy-pasting examples, for
+  # instance.
+  git = !git
+
+  # Show a concise status of the working directory, along with the branch
+  # and the number of commits behind and/or ahead.
+  s = status --short --branch
+
+  # Quickly push to the most common destination.
+  pom = push origin master
+
+  # I know "pum" could just as well stand for "PUsh" instead of "PUll", but
+  # I am so used to "git pom" that "git pum" feels like a natural
+  # counterpart. I always try to rebase to prevent unnecessary merge
+  # commits.
+  pum = pull --rebase origin master
+
+  # Show the staged changes.
+  dc = diff --cached
+
+  # Like "git show myfile", but uses the last commit that changed "myfile".
+  showlast = log -n 1 -p
+
+  # Switch branches, creating them if necessary. I want to unlearn using
+  # "usinggit checkout" for switching between branches because of the possible
+  # dataloss when not paying attention. (You could see the PEBKAC, but I
+  # could reply with another four letter acronym, slightly resembling TOFU.)
+  #
+  # Suppose I have modified a file named "password" and have two branches,
+  # "password-expiry-mechanism" and "password-reset-mail". If I want to
+  # switch to either branch, I would type "git checkout pass<Tab><Enter>",
+  # but the autocomplete would stop at "git checkout password" because of
+  # the ambiguity. Because I press <Enter> without really thinking, I have
+  # now reset my "password" file. With "git go pass<Tab><Enter>", I would
+  # simply have created a new branch called "password". (I would be forced
+  # to use "--" to separate paths from banch names, which is a Good Thing™.)
+  go = checkout -B
+
+  lsd = log --graph --decorate --pretty=oneline --abrev-commit --all
+
   br = branch
   ci = commit
   co = checkout
@@ -19,6 +63,9 @@
   rv = review
   st = status
   ksdiff = difftool -y -t Kaleidoscope
+[merge]
+#  tool = vimdiff
+  log = true
 [branch "master"]
   remote = origin
   merge = refs/heads/master
@@ -39,6 +86,13 @@
   untracked = cyan
 [merge]
   log = true
+[push]
+  # Make "git push" or "git push <remote>" only push the current branch to
+  # the tracked branch (regardless of its remote name) as opposed to pushing
+  # all branches with a matching name on the remote. See "An asymmetry
+  # between git pull and push": http://longair.net/blog/?p=572
+  default = tracking
+
 [difftool "Kaleidoscope"]
   cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [rerere]

@@ -51,3 +51,42 @@ function md() {
 _Z_NO_PROMPT_COMMAND=1
 _Z_DATA=~/.dotfiles/caches/.z
 . ~/.dotfiles/libs/z/z.sh
+
+
+# Make less the default pager, and specify some useful defaults.
+less_options=(
+# If the entire text fits on one screen, just show it and quit. (Be more
+# like "cat" and less like "more".)
+--quit-if-one-screen
+
+# Do not clear the screen first.
+--no-init
+
+# Like "smartcase" in Vim: ignore case unless the search pattern is mixed.
+--ignore-case
+
+# Do not automatically wrap long lines.
+--chop-long-lines
+
+# Allow ANSI colour escapes, but no other escapes.
+--RAW-CONTROL-CHARS
+
+# Do not ring the bell when trying to scroll past the end of the buffer.
+--quiet
+
+# Do not complain when we are on a dumb terminal.
+--dumb
+);
+export LESS="${less_options[*]}";
+unset less_options;
+export PAGER='less';
+
+# Make "less" transparently unpack archives etc.
+if [ -x /usr/bin/lesspipe ]; then
+  eval $(/usr/bin/lesspipe);
+elif command -v lesspipe.sh > /dev/null; then
+  # MacPorts recommended "/opt/local/bin/lesspipe.sh", but this is more
+  # portable for people that have it in another directory in their $PATH.
+  eval $(lesspipe.sh);
+fi;
+
