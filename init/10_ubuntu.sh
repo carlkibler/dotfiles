@@ -32,7 +32,7 @@ fi
 
 # Update APT.
 e_header "Updating APT"
-sudo add-apt-repository ppa:apt-fast/stable
+sudo add-apt-repository -y ppa:apt-fast/stable
 sudo apt-get -qq update
 sudo apt-get -qq upgrade
 
