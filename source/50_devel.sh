@@ -12,6 +12,8 @@ alias goenv='cd $VIRTUAL_ENV'
 # TODO: move this to a separate .bash/completion/git or some such.
 [ -f ~/git-completion.bash ] && source ~/git-completion.bash;
 
+alias gcm='git commit -m'
+
 # Show the current Git branch, if any.
 # (This is useful in the shell prompt.)
 function git-show-branch {
