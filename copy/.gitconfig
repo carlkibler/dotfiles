@@ -1,6 +1,6 @@
 [user]
   name = Carl Scharenberg
-  email = carl.scharenberg@gmail.com
+  email = carl.scharenberg@propylon.com
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
@@ -52,12 +52,19 @@
 
   lsd = log --graph --decorate --pretty=oneline --abrev-commit --all
 
+  # Lists what you did in the last 24 hours
+  standup = "!git log --since yesterday --author `git config user.email` --pretty=short"
+
+  purr = pull --rebase
+  ready = rebase -i @{u}
+
+  lg = log --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   br = branch
   ci = commit
   co = checkout
   df = diff
   g = grep -I
-  lg = log -p
+  #lg = log -p
   pp = !"echo 'Pull'; git pull; echo 'Push'; git push"
   rb = rbranch
   rv = review
