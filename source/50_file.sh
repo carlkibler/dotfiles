@@ -47,12 +47,6 @@ function md() {
   mkdir -p "$@" && cd "$@"
 }
 
-# Fast directory switching
-_Z_NO_PROMPT_COMMAND=1
-_Z_DATA=~/.dotfiles/caches/.z
-. ~/.dotfiles/libs/z/z.sh
-
-
 # Make less the default pager, and specify some useful defaults.
 less_options=(
 # If the entire text fits on one screen, just show it and quit. (Be more
@@ -80,13 +74,4 @@ less_options=(
 export LESS="${less_options[*]}";
 unset less_options;
 export PAGER='less';
-
-# Make "less" transparently unpack archives etc.
-if [ -x /usr/bin/lesspipe ]; then
-  eval $(/usr/bin/lesspipe);
-elif command -v lesspipe.sh > /dev/null; then
-  # MacPorts recommended "/opt/local/bin/lesspipe.sh", but this is more
-  # portable for people that have it in another directory in their $PATH.
-  eval $(lesspipe.sh);
-fi;
 
