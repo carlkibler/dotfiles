@@ -3,9 +3,6 @@
 # modified with the actual home folder of our user, 
 # so do a replacement on the word HOMEDIR and replace
 # with value of $HOME.
-replace HOMEDIR $HOME -- $HOME/.pip/pip.conf
-
-
 
 source ~/.dotfiles/source/50_devel.sh
 
