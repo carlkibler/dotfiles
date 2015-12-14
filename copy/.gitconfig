@@ -1,6 +1,6 @@
 [user]
-  name = Carl Scharenberg
-  email = carl.scharenberg@propylon.com
+  name = Carl Kibler
+  email = carl@carlkibler.com
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
